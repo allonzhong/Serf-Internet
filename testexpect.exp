@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+        set     timeout   10
+        set     RBakdir   "/data/rsvn_backup"
+        set     Host    "120.79.147.187"
+        set     BakDir  "/data/svn_backup"
+        set     Time    "`date '+%F-%H-%M-%S'`"
+        set     Password        "zCgHOa7waKjii9lF"
+        set     port    "41000"
+        spawn scp -P $port 123.txt root@${Host}:${RBakdir}
+        expect  {
+		"yes/no" { send "yes\r"; exp_continue}
+        	"password:"  { send "$Password\r"}
+		}       
+        expect  eof
+        
+
