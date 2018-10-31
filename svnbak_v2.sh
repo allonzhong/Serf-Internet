@@ -52,9 +52,9 @@ rm -rf ${BakSubdir}
 find ${BakFir} -maxdepth 1 -type d -mtime +$(expr ${Maxdays} -1) -exec echo "delete {}" \; -exec rm -rf "{}" \;
 
 # put the backupfile to the remote host.
-Host=120.79.147.187
+Host=x.x.x.x
 RBakdir=/data/rsvn_backup
-Password='zCgHOa7waKjii9lF'
+Password='xxxxxx'
 port=41000
 /usr/bin/expect << EOF
 	set	timeout   10
@@ -68,8 +68,8 @@ EOF
 	
 
 #	set	RBakdir	  "/data/rsvn_backup"
-#	set	Host	"120.79.147.187"
+#	set	Host	"x.x.x.x"
 #	set	BakDir	"/data/svn_backup"
 #	set	Time	"`date '+%F-%H-%M-%S'`"
-#	set	Password	"zCgHOa7waKjii9lF"
+#	set	Password	"xxxxx"
 #	set	port	"41000"
