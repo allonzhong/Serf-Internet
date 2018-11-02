@@ -56,9 +56,9 @@ for dir in ${BaseDir}
 #/usr/bin/tar -zcvf ${Time}.tar.gz ${Time}/
 
 # put the backupfile to the remote host.
-Host=120.78.197.194
+Host=x.x.x.x
 RBakdir=/data/incre_backup
-Password='vbl9ubyI6ImNuLXNoZW56a'
+Password='xxxxxxxxx'
 port=22
 /bin/expect << EOF
 	set	timeout   10
