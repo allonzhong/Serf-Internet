@@ -1,0 +1,20 @@
+---
+- hosts: test
+  remote_user: root
+  tasks:
+  - name: make testfile1
+    file: path=/testdir/testfile1
+          state=directory
+    notify: ht2
+  - name: make testfile2
+    file: path=testdir/testfile2
+          state=directory
+    notify: ht1
+
+  handlers:
+  - name: ht1
+    file: path=/testdir/ht1
+          state=touch
+  - name: ht2
+    file: path=/testdir/ht2 
+          state=touch

@@ -1,0 +1,10 @@
+---
+- hosts: nginx
+  remote_user: root
+  tasks:
+  - name: Ping the host
+    ping:
+  - name: make directory test
+    file: 
+      path: /testdir/test1
+      state: directory

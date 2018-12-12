@@ -1,0 +1,23 @@
+---
+- hosts: nginx
+  remote_user: root
+  tasks:
+  - name: Ping the host
+    ping:
+  - name: create file testfile
+    file:
+      path: /testdir/testfile
+      state: touch
+- hosts: minitest
+  tasks:
+  - name: delete file test123
+    file:
+      path: /testdir/test123
+      state: absent
+      force: yes
+- hosts: docker,phptest
+  tasks:
+  - name: create user think
+    user:
+      name:  think
+      shell: /sbin/nologin

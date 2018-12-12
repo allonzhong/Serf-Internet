@@ -1,0 +1,15 @@
+---
+- hosts: test
+  remote_user: root
+  tasks:
+  - name: Modify the configuration
+    lineinfile:
+      path=/etc/nginx/nginx.conf
+      regexp="listen(.*) 80 (.*)"
+      line="listen\1 8088 \2"
+      backrefs=yes
+      backup=yes
+  - name: restart nginx
+    service:
+      name=nginx
+      state=restarted
